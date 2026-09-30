@@ -11,4 +11,4 @@ Run this from the challenge workspace (the folder, or the `kodwai-*` folder insi
 npx -y @kodwai/cli@latest status
 ```
 
-Report it in two or three lines: time used and left (or the score, if it's already submitted) and the file count. It needs network access, so in a sandbox (Codex) run it with escalated permissions. Never submit or abandon from here.
+Report it in two or three lines: time used and left (or the score, if it's already submitted) and the file count. It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command. Never submit or abandon from here.

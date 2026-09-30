@@ -9,6 +9,9 @@
 //     challenge / submit / abandon stay explicit-only through agents/openai.yaml
 //     (`allow_implicit_invocation: false`), which is how Codex expresses it.
 //   - only the Codex manifest and what it references.
+//   - the CLI pinned to an exact version (`npx @kodwai/cli@1.10.0`, no -y): the
+//     directory treats `@latest` as code from a mutable source. Rebuild and
+//     re-upload after each CLI release (KODWAI_CLI_VERSION overrides the lookup).
 //
 // Output: dist/kodwai-openai-<version>.zip
 // Run: npm run build:openai
@@ -25,6 +28,11 @@ const OUT_DIR = join(ROOT, "dist");
 const STAGE = join(OUT_DIR, "openai", "kodwai");
 const ZIP = join(OUT_DIR, `kodwai-openai-${manifest.version}.zip`);
 
+const cliVersion =
+  process.env.KODWAI_CLI_VERSION || execFileSync("npm", ["view", "@kodwai/cli", "version"], { encoding: "utf-8" }).trim();
+if (!/^\d+\.\d+\.\d+$/.test(cliVersion)) throw new Error(`Unexpected @kodwai/cli version: ${cliVersion}`);
+const pinCli = (text) => text.replace(/npx (?:-y )?@kodwai\/cli@latest/g, `npx @kodwai/cli@${cliVersion}`);
+
 rmSync(join(OUT_DIR, "openai"), { recursive: true, force: true });
 rmSync(ZIP, { force: true });
 mkdirSync(STAGE, { recursive: true });
@@ -35,7 +43,7 @@ mkdirSync(join(STAGE, ".codex-plugin"));
 writeFileSync(join(STAGE, ".codex-plugin", "plugin.json"), JSON.stringify(manifest, null, 2) + "\n");
 
 cpSync(join(SRC, "assets"), join(STAGE, "assets"), { recursive: true });
-cpSync(join(SRC, "README.md"), join(STAGE, "README.md"));
+writeFileSync(join(STAGE, "README.md"), pinCli(readFileSync(join(SRC, "README.md"), "utf-8")));
 
 // Skills, minus the frontmatter key the directory rejects.
 for (const skill of readdirSync(join(SRC, "skills"))) {
@@ -43,7 +51,7 @@ for (const skill of readdirSync(join(SRC, "skills"))) {
   const to = join(STAGE, "skills", skill);
   cpSync(from, to, { recursive: true });
   const md = join(to, "SKILL.md");
-  const text = readFileSync(md, "utf-8").replace(/^disable-model-invocation:.*\n/m, "");
+  const text = pinCli(readFileSync(md, "utf-8").replace(/^disable-model-invocation:.*\n/m, ""));
   writeFileSync(md, text);
   const yaml = join(to, "agents", "openai.yaml");
   const wasUserOnly = /^disable-model-invocation: true$/m.test(readFileSync(join(from, "SKILL.md"), "utf-8"));
@@ -54,4 +62,4 @@ for (const skill of readdirSync(join(SRC, "skills"))) {
 
 // Zip the plugin root's contents (manifest at the top level of the archive).
 execFileSync("zip", ["-qrX", ZIP, ".", "-x", "*.DS_Store"], { cwd: STAGE });
-console.log(`✔ ${ZIP.slice(ROOT.length + 1)}`);
+console.log(`✔ ${ZIP.slice(ROOT.length + 1)} (CLI pinned to ${cliVersion})`);

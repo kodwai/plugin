@@ -14,7 +14,7 @@ Run these with `npx -y @kodwai/cli@latest <command>`.
 | Show or set their username | `username` / `username <name>` |
 | Their scoring key and free runs left | `key` |
 | Connect an Anthropic key | `key add` (see below) |
-| Remove a key | `key remove <id> --yes` |
+| Remove a key | the user runs `npx @kodwai/cli@latest key remove <id>` in their own terminal, or removes it in Settings |
 | Send feedback to the kodwai team | `feedback "<text>" --category bug\|feature\|improvement\|general [--rating 1-5]` |
 | Their feedback and the team's replies | `feedback list` |
 | Open a page in the browser | `open [challenges\|leaderboard\|league\|events\|sprint\|quests\|badges\|profile\|wrapped\|submissions\|settings\|feedback\|<challenge-slug>]` |
@@ -25,6 +25,6 @@ Run these with `npx -y @kodwai/cli@latest <command>`.
 Writes:
 - **Feedback:** draft it, show the user the exact text, and send only after they say yes. The founder reads every message.
 - **Username** changes their public URL. Only change it to a name the user chose.
-- **Removing a key** can't be undone. Only on the user's request, after they confirm.
+- **Removing a key** can't be undone, so the user does it themselves (their terminal or Settings). Don't run it.
 
 Password changes are only on the website (`open settings`).

@@ -19,7 +19,7 @@ The user wants to start a kodwai challenge. The slug is the argument they gave (
 
    `<agent>` is the agent you are: `claude-code` in Claude Code, `codex` in Codex, `cursor` in Cursor.
    Give the command up to 10 minutes: the first run opens the browser for sign in.
-   It needs network access and writes to `~/.kodwai`, so in a sandbox (Codex) run it with escalated permissions.
+   It needs network access to api.kodwai.com and writes its sign-in to `~/.kodwai`. If a sandbox blocks that, tell the user and let them approve it for this command.
 
 3. **If it stops early**, tell the user what happened in one or two sentences:
    - *Data collection notice.* Show the user the notice from the output (what is collected, what is not) and ask whether they accept it. Only if they say yes, run the same command again with `--accept-data-notice` added. Never accept it for them.

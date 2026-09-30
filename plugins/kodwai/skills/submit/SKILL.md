@@ -26,7 +26,7 @@ A challenge can be submitted only once, so confirm before sending.
    npx -y @kodwai/cli@latest submit --yes
    ```
 
-   It runs the tests, uploads the code, git history, test results and this session's transcript, then waits for the score. Give it up to 10 minutes. If your shell tool can't wait that long, add `--no-wait` and run `status` again in a minute. It needs network access, so in a sandbox (Codex) run it with escalated permissions.
+   It runs the tests, uploads the code, git history, test results and this session's transcript, then waits for the score. Give it up to 10 minutes. If your shell tool can't wait that long, add `--no-wait` and run `status` again in a minute. It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command.
 
 5. **Report the result** as the CLI printed it: the total, Direction, Outcome and Lift, and the results link. Keep it to the numbers. Don't argue with the score or add praise.
 

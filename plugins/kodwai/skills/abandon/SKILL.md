@@ -15,5 +15,5 @@ This stops the challenge in progress without a score, so the user can start anot
    npx -y @kodwai/cli@latest abandon --yes
    ```
 
-   It needs network access, so in a sandbox (Codex) run it with escalated permissions.
+   It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command.
 3. Tell the user it's dropped, and that `/kodwai:challenge <slug>` starts a new one.
