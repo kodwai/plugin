@@ -48,7 +48,9 @@ Being exact about it:
   - It makes no network calls and never reads transcript contents.
 - **Your Anthropic API key never passes through the plugin or the chat.** You enter it on the kodwai settings page or in a hidden prompt in your own terminal.
 
-Privacy policy: https://www.kodwai.com/privacy. Terms: https://www.kodwai.com/terms.
+- Privacy policy: https://www.kodwai.com/privacy
+- Terms of service: https://www.kodwai.com/terms
+- Support: https://github.com/kodwai/plugin/issues or hakan@kodwai.com
 
 In Codex, skills are invoked with `$` instead of `/`: `$kodwai:leaderboard`.
 
