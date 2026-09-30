@@ -1,0 +1,4 @@
+interface:
+  display_name: "kodwai leaderboard"
+  short_description: "Rankings, challenge boards and your league"
+  default_prompt: "Use $kodwai:leaderboard to show where I rank and how my league is going."

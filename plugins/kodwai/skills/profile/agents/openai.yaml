@@ -1,0 +1,4 @@
+interface:
+  display_name: "kodwai profile"
+  short_description: "Tier, Elo, XP, badges, quests and Wrapped"
+  default_prompt: "Use $kodwai:profile to show my kodwai stats and what's closest to unlock."

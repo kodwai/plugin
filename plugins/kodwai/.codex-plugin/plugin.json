@@ -1,0 +1,39 @@
+{
+  "name": "kodwai",
+  "version": "0.1.0",
+  "description": "Start, check and submit kodwai challenges without leaving your agent. Links this session to the challenge so your transcript is scored exactly.",
+  "author": {
+    "name": "Kodwai",
+    "url": "https://www.kodwai.com"
+  },
+  "homepage": "https://www.kodwai.com",
+  "repository": "https://github.com/kodwai/plugin",
+  "license": "MIT",
+  "keywords": [
+    "kodwai",
+    "agentic-coding",
+    "coding-challenge",
+    "ai-native",
+    "leaderboard"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Kodwai",
+    "shortDescription": "Agentic coding challenges, scored on how you direct the agent",
+    "longDescription": "Start a kodwai challenge, check your time, and submit from inside Codex. kodwai scores the session on three axes: Direction, Outcome and Lift.",
+    "developerName": "Kodwai",
+    "category": "Developer Tools",
+    "websiteURL": "https://www.kodwai.com",
+    "defaultPrompt": [
+      "Start today's kodwai challenge",
+      "How much time is left on my kodwai challenge?"
+    ],
+    "brandColor": "#FF5A1F",
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "kodwai",
+  "description": "The official kodwai plugin for Claude Code.",
+  "owner": { "name": "Kodwai", "url": "https://www.kodwai.com" },
+  "plugins": [
+    {
+      "name": "kodwai",
+      "source": "./plugins/kodwai",
+      "description": "Start, check and submit kodwai challenges without leaving your agent.",
+      "category": "development",
+      "tags": ["agentic-coding", "coding-challenge", "leaderboard"]
+    }
+  ]
+}

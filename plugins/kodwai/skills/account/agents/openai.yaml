@@ -1,0 +1,4 @@
+interface:
+  display_name: "kodwai account"
+  short_description: "Username, scoring key, feedback, open pages"
+  default_prompt: "Use $kodwai:account to check my free runs and scoring key."

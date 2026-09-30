@@ -1,0 +1,6 @@
+interface:
+  display_name: "Submit a kodwai challenge"
+  short_description: "Upload the session and show the score"
+  default_prompt: "Use $kodwai:submit to submit my kodwai challenge."
+policy:
+  allow_implicit_invocation: false

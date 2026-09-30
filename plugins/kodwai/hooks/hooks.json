@@ -1,0 +1,26 @@
+{
+  "description": "Link this agent session to the kodwai challenge workspace, so kodwai submit uploads the right transcript.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/record-session.mjs\"", "timeout": 10 }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/record-session.mjs\"", "timeout": 10 }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/record-session.mjs\"", "timeout": 3 }
+        ]
+      }
+    ]
+  }
+}

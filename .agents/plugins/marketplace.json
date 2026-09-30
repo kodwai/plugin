@@ -1,0 +1,12 @@
+{
+  "name": "kodwai",
+  "interface": { "displayName": "Kodwai" },
+  "plugins": [
+    {
+      "name": "kodwai",
+      "source": { "source": "local", "path": "./plugins/kodwai" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "kodwai challenges"
+  short_description: "Browse challenges, the daily, sprint, events"
+  default_prompt: "Use $kodwai:challenges to find me a kodwai challenge to try next."

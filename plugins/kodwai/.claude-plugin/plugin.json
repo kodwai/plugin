@@ -1,0 +1,11 @@
+{
+  "name": "kodwai",
+  "displayName": "Kodwai",
+  "version": "0.1.0",
+  "description": "Start, check and submit kodwai challenges without leaving your agent. Links this session to the challenge so your transcript is scored exactly.",
+  "author": { "name": "Kodwai", "url": "https://www.kodwai.com" },
+  "homepage": "https://www.kodwai.com",
+  "repository": "https://github.com/kodwai/plugin",
+  "license": "MIT",
+  "keywords": ["kodwai", "agentic-coding", "coding-challenge", "ai-native", "leaderboard"]
+}

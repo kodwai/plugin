@@ -1,0 +1,4 @@
+interface:
+  display_name: "kodwai runs"
+  short_description: "Scores, full results, evidence and sharing"
+  default_prompt: "Use $kodwai:runs to explain my last kodwai score."

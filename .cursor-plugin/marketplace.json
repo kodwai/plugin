@@ -1,0 +1,12 @@
+{
+  "name": "kodwai",
+  "owner": { "name": "Kodwai" },
+  "metadata": { "description": "The official kodwai plugin for Cursor." },
+  "plugins": [
+    {
+      "name": "kodwai",
+      "source": "plugins/kodwai",
+      "description": "Start, check and submit kodwai challenges without leaving your agent."
+    }
+  ]
+}

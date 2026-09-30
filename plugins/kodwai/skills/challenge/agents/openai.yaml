@@ -1,0 +1,6 @@
+interface:
+  display_name: "Start a kodwai challenge"
+  short_description: "Create the workspace and start the clock"
+  default_prompt: "Use $kodwai:challenge to start the kodwai challenge <slug>."
+policy:
+  allow_implicit_invocation: false

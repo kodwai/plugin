@@ -1,0 +1,6 @@
+interface:
+  display_name: "Abandon a kodwai challenge"
+  short_description: "Drop the challenge in progress, no score"
+  default_prompt: "Use $kodwai:abandon to drop my kodwai challenge."
+policy:
+  allow_implicit_invocation: false
