@@ -1,6 +1,6 @@
 {
   "name": "kodwai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Start, check and submit kodwai challenges without leaving your agent. Links this session to the challenge so your transcript is scored exactly.",
   "author": {
     "name": "Kodwai",
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Kodwai",
-    "shortDescription": "Agentic coding challenges, scored on how you direct the agent",
-    "longDescription": "Start a kodwai challenge, check your time, and submit from inside Codex. kodwai scores the session on three axes: Direction, Outcome and Lift.",
+    "shortDescription": "Agentic coding challenges",
+    "longDescription": "kodwai is where developers prove they can drive an AI agent. Solve real coding challenges on your own machine with Codex, then kodwai scores the session on three axes: Direction (how you steer the agent), Outcome (does it work) and Lift (did you catch the traps). This plugin brings the whole platform into Codex: browse challenges, the Challenge of the Day and the weekly sprint; check the leaderboard and your weekly league; see your tier, Elo, XP, badges and quests; read a run's full result with the judge's evidence; and start, check and submit challenges. It runs the open-source kodwai CLI (npx @kodwai/cli), which talks only to the kodwai API. Free for developers: 3 free scored runs, then bring your own Anthropic key.",
     "developerName": "Kodwai",
     "category": "Developer Tools",
     "websiteURL": "https://www.kodwai.com",
@@ -32,8 +32,13 @@
     "logo": "./assets/logo.png",
     "composerIcon": "./assets/logo.png",
     "capabilities": [
-      "Interactive",
-      "Write"
-    ]
+      "Browse challenges",
+      "Leaderboards and league",
+      "Profile, badges and quests",
+      "Run results and sharing",
+      "Start and submit challenges"
+    ],
+    "privacyPolicyURL": "https://www.kodwai.com/privacy",
+    "termsOfServiceURL": "https://www.kodwai.com/terms"
   }
 }

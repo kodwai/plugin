@@ -2,7 +2,6 @@
 name: challenges
 description: Browse kodwai challenges, see one challenge's spec, rubric and top 10, today's Challenge of the Day, the weekly sprint and events. Use when the user asks what kodwai challenges exist, which to try, what the daily or sprint is, how a challenge is scored, or about kodwai events.
 argument-hint: "[search | slug | daily | sprint | events]"
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # Discover kodwai challenges

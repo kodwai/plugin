@@ -1,7 +1,6 @@
 ---
 name: status
 description: Show time left and files so far for the kodwai challenge in progress, or its score once submitted. Use when the user asks about their kodwai challenge, time left or score.
-allowed-tools: Bash(npx -y @kodwai/cli@latest status*)
 ---
 
 # kodwai status

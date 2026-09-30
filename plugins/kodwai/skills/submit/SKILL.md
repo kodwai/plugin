@@ -2,7 +2,6 @@
 name: submit
 description: Submit the kodwai challenge in progress and show the score. Only when the user runs it.
 disable-model-invocation: true
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # Submit a kodwai challenge

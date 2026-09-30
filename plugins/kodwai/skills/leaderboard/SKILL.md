@@ -2,7 +2,6 @@
 name: leaderboard
 description: kodwai standings. The all-time leaderboard with filters, one challenge's board, the user's rank on each challenge, and their weekly league (division, rank, promotion and demotion zones). Use when the user asks where they rank, who's on top, how their league is going, or to compare agents or models on kodwai.
 argument-hint: "[slug | me | league]"
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # kodwai standings

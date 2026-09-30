@@ -2,7 +2,6 @@
 name: account
 description: The user's kodwai account. Username, the Anthropic key used for scoring and free runs left, sending feedback to the kodwai team and reading replies, and opening any kodwai page in the browser. Use when the user asks about their kodwai username, API key, free runs, wants to report a bug or idea to kodwai, or open the kodwai site.
 argument-hint: "[username | key | feedback | open]"
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # kodwai account

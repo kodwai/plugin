@@ -2,7 +2,6 @@
 name: runs
 description: The user's kodwai runs (submissions). History, one run's full result (score, Direction, Outcome and Lift, moments, what it unlocked, every signal with the judge's evidence), public share links, and rating a challenge. Use when the user asks about their kodwai scores, a past run, why they got a score, how to improve Direction, or wants to share or rate a run.
 argument-hint: "[run-id]"
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # kodwai runs

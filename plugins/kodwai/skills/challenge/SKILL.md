@@ -3,7 +3,6 @@ name: challenge
 description: Start a kodwai challenge in the current folder. Only when the user runs it.
 argument-hint: <challenge-slug>
 disable-model-invocation: true
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # Start a kodwai challenge

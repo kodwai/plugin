@@ -2,7 +2,6 @@
 name: abandon
 description: Drop the kodwai challenge in progress without scoring it. Only when the user runs it.
 disable-model-invocation: true
-allowed-tools: Bash(npx -y @kodwai/cli@latest abandon*)
 ---
 
 # Abandon a kodwai challenge

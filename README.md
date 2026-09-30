@@ -32,6 +32,24 @@ Guardrails:
 - Your Anthropic key never goes through the chat. `key add` opens the settings page (or a hidden prompt in your own terminal), and the agent won't use a key pasted into the conversation.
 - Password changes stay on the website.
 
+## What this plugin runs and sends
+
+Being exact about it:
+
+- **The skills run one program: the kodwai CLI,** via `npx -y @kodwai/cli@latest <command>` ([source](https://github.com/kodwai/cli), [npm](https://www.npmjs.com/package/@kodwai/cli)). Your agent asks your permission before running it, as it does for any shell command.
+- **The CLI talks to one service: the kodwai API** at `https://api.kodwai.com`, over HTTPS.
+  - To read your challenges, leaderboards, profile, badges, quests and runs, and to make the changes you ask for (claiming quests, sharing, ratings, feedback, profile and username).
+  - When you submit a challenge, it uploads that challenge folder's code, git history and test results, plus the transcript of the agent session linked to it.
+  - Nothing is uploaded without a command you ran or approved.
+- **Your sign-in is a token the CLI keeps in `~/.kodwai/config.json`,** created when you approve "Authorize CLI" in your browser. The CLI sends it only to the kodwai API. The plugin never reads it.
+- **The hook script (`scripts/record-session.mjs`) is local only.**
+  - It reads the hook's JSON input (session id, transcript file path, working folder) and three environment variables: `CLAUDE_PROJECT_DIR`, `CURSOR_PROJECT_DIR` and `CURSOR_VERSION`.
+  - It writes the session id and transcript path to `.kodwai/agent-sessions.json` inside the challenge folder, and only when the folder is a kodwai challenge.
+  - It makes no network calls and never reads transcript contents.
+- **Your Anthropic API key never passes through the plugin or the chat.** You enter it on the kodwai settings page or in a hidden prompt in your own terminal.
+
+Privacy policy: https://www.kodwai.com/privacy. Terms: https://www.kodwai.com/terms.
+
 In Codex, skills are invoked with `$` instead of `/`: `$kodwai:leaderboard`.
 
 ## Install

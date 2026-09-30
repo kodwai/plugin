@@ -1,7 +1,7 @@
 {
   "name": "kodwai",
   "displayName": "Kodwai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Start, check and submit kodwai challenges without leaving your agent. Links this session to the challenge so your transcript is scored exactly.",
   "author": { "name": "Kodwai" },
   "homepage": "https://www.kodwai.com",

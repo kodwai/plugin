@@ -2,7 +2,6 @@
 name: profile
 description: The user's kodwai player card and progress. Tier, Direction Elo, level and XP, rank, streak, category mastery, badges held and in progress, daily and weekly quests (and claiming their XP), Wrapped, the README rank card, and anyone's public profile. Use when the user asks about their kodwai stats, badges, quests, streak, XP, tier, or another developer's profile.
 argument-hint: "[username | badges | quests | wrapped | card]"
-allowed-tools: Bash(npx -y @kodwai/cli@latest *)
 ---
 
 # kodwai profile and progress

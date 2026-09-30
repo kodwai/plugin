@@ -20,8 +20,17 @@ import { pathToFileURL } from "node:url";
 const MAX_SESSIONS = 50;
 const FILE_VERSION = 1;
 
+/** The only environment variables this script reads: which agent and which project folder. Nothing else. */
+export function hookEnv() {
+  return {
+    CURSOR_VERSION: process.env.CURSOR_VERSION,
+    CURSOR_PROJECT_DIR: process.env.CURSOR_PROJECT_DIR,
+    CLAUDE_PROJECT_DIR: process.env.CLAUDE_PROJECT_DIR,
+  };
+}
+
 /** Which agent is calling. Cursor also runs Claude Code hooks, so trust the payload, not the hook file. */
-export function detectAgent(input, env = process.env) {
+export function detectAgent(input, env = hookEnv()) {
   if (input.cursor_version || Array.isArray(input.workspace_roots) || env.CURSOR_VERSION) return "cursor";
   const transcript = typeof input.transcript_path === "string" ? input.transcript_path : "";
   if (/(^|[\\/])rollout-[^\\/]*\.jsonl$/.test(transcript) || "turn_id" in input) return "codex";
@@ -29,7 +38,7 @@ export function detectAgent(input, env = process.env) {
 }
 
 /** Folders this session works in, most specific first. */
-export function candidateDirs(input, env = process.env) {
+export function candidateDirs(input, env = hookEnv()) {
   const dirs = [];
   if (typeof input.cwd === "string" && input.cwd) dirs.push(input.cwd);
   if (Array.isArray(input.workspace_roots)) {
@@ -108,7 +117,7 @@ export function upsertSession(file, entry, now = new Date().toISOString()) {
 }
 
 /** Handle one hook payload. Returns the workspace it linked, or null. */
-export function record(input, env = process.env) {
+export function record(input, env = hookEnv()) {
   const sessionId = input.session_id || input.conversation_id;
   if (!sessionId || typeof sessionId !== "string") return null;
 
