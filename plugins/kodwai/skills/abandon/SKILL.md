@@ -12,7 +12,7 @@ This stops the challenge in progress without a score, so the user can start anot
 2. Run from the workspace (or anywhere):
 
    ```
-   npx -y @kodwai/cli@latest abandon --yes
+   npx @kodwai/cli@1.10.0 abandon --yes
    ```
 
    It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command.

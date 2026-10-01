@@ -6,7 +6,7 @@ argument-hint: "[search | slug | daily | sprint | events]"
 
 # Discover kodwai challenges
 
-Run these with `npx -y @kodwai/cli@latest <command>`. Public commands work signed out; `daily` and `sprint` sign the user in through the browser if needed.
+Run these with `npx @kodwai/cli@1.10.0 <command>`. Public commands work signed out; `daily` and `sprint` sign the user in through the browser if needed.
 
 | The user wants | Command |
 |---|---|

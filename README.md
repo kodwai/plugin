@@ -36,7 +36,7 @@ Guardrails:
 
 Being exact about it:
 
-- **The skills run one program: the kodwai CLI,** via `npx -y @kodwai/cli@latest <command>` ([source](https://github.com/kodwai/cli), [npm](https://www.npmjs.com/package/@kodwai/cli)). Your agent asks your permission before running it, as it does for any shell command.
+- **The skills run one program: the kodwai CLI,** via `npx @kodwai/cli@1.10.0 <command>` ([source](https://github.com/kodwai/cli), [npm](https://www.npmjs.com/package/@kodwai/cli)). Your agent asks your permission before running it, as it does for any shell command.
 - **The CLI talks to one service: the kodwai API** at `https://api.kodwai.com`, over HTTPS.
   - To read your challenges, leaderboards, profile, badges, quests and runs, and to make the changes you ask for (claiming quests, sharing, ratings, feedback, profile and username).
   - When you submit a challenge, it uploads that challenge folder's code, git history and test results, plus the transcript of the agent session linked to it.
@@ -87,7 +87,7 @@ In Cursor: **Customize → Plugins → From GitHub Repository** → `https://git
 3. Run `/kodwai:status` whenever you want to see the clock.
 4. When you're done, run `/kodwai:submit`. It runs the tests, uploads the code, git history, test results and this session's transcript, then shows your score.
 
-The CLI underneath is [@kodwai/cli](https://www.npmjs.com/package/@kodwai/cli), run with `npx -y @kodwai/cli@latest`. You can use it directly from any terminal too.
+The CLI underneath is [@kodwai/cli](https://www.npmjs.com/package/@kodwai/cli), run with `npx @kodwai/cli@1.10.0`. You can use it directly from any terminal too.
 
 ## Requirements
 

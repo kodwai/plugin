@@ -14,7 +14,7 @@ The user wants to start a kodwai challenge. The slug is the argument they gave (
 2. **Start it** from the current folder:
 
    ```
-   npx -y @kodwai/cli@latest challenge <slug> --agent <agent>
+   npx @kodwai/cli@1.10.0 challenge <slug> --agent <agent>
    ```
 
    `<agent>` is the agent you are: `claude-code` in Claude Code, `codex` in Codex, `cursor` in Cursor.

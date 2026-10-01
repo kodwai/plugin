@@ -18,5 +18,5 @@ The session transcript is part of the submission. So inside a challenge workspac
 - **Stay in the workspace.** Keep edits and commands inside the `kodwai-<slug>/` folder.
 - **Leave kodwai's files alone.** Don't edit or delete `.kodwai/`. Don't edit or delete the provided tests to make them pass unless the user explicitly asks. Don't rewrite git history: the starter commit is the baseline the diff is taken against.
 - **Never submit or abandon on your own.** Those are `/kodwai:submit` and `/kodwai:abandon`, run by the user. A challenge can be submitted only once.
-- **Time is visible.** `npx -y @kodwai/cli@latest status` shows time left if the user asks.
+- **Time is visible.** `npx @kodwai/cli@1.10.0 status` shows time left if the user asks.
 - **Platform lookups are fine, but they're in the transcript too.** Leaderboards, profile, quests and the rest work mid-challenge (see the other kodwai skills). Keep them short and only when the user asks.

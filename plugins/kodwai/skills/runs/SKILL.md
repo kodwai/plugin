@@ -6,7 +6,7 @@ argument-hint: "[run-id]"
 
 # kodwai runs
 
-Run these with `npx -y @kodwai/cli@latest <command>`.
+Run these with `npx @kodwai/cli@1.10.0 <command>`.
 
 | The user wants | Command |
 |---|---|
@@ -15,7 +15,7 @@ Run these with `npx -y @kodwai/cli@latest <command>`.
 | Every signal with its value, weight, reason and evidence | `result [id] --verbose` |
 | A public share link (and X / LinkedIn links) for a scored run | `share [id]` |
 | Rate the challenge a run was for | `rate [id] --overall 1-5 [--difficulty 1-5] [--clarity 1-5] [--comment "..."]` |
-| Delete a run | the user runs `npx @kodwai/cli@latest delete <id>` in their own terminal, or deletes it on the run's page |
+| Delete a run | the user runs `npx @kodwai/cli@1.10.0 delete <id>` in their own terminal, or deletes it on the run's page |
 
 Read the default output first: it marks the user's own rows ("◀ you") and says plainly when they aren't ranked. Add `--json` only when you need exact fields to compute something; in JSON, `me`/`viewer` is the user, and `me: null` means they aren't on that board.
 

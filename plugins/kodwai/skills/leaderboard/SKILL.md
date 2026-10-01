@@ -6,7 +6,7 @@ argument-hint: "[slug | me | league]"
 
 # kodwai standings
 
-Run these with `npx -y @kodwai/cli@latest <command>`.
+Run these with `npx @kodwai/cli@1.10.0 <command>`.
 
 | The user wants | Command |
 |---|---|

@@ -6,7 +6,7 @@ argument-hint: "[username | key | feedback | open]"
 
 # kodwai account
 
-Run these with `npx -y @kodwai/cli@latest <command>`.
+Run these with `npx @kodwai/cli@1.10.0 <command>`.
 
 | The user wants | Command |
 |---|---|
@@ -14,13 +14,13 @@ Run these with `npx -y @kodwai/cli@latest <command>`.
 | Show or set their username | `username` / `username <name>` |
 | Their scoring key and free runs left | `key` |
 | Connect an Anthropic key | `key add` (see below) |
-| Remove a key | the user runs `npx @kodwai/cli@latest key remove <id>` in their own terminal, or removes it in Settings |
+| Remove a key | the user runs `npx @kodwai/cli@1.10.0 key remove <id>` in their own terminal, or removes it in Settings |
 | Send feedback to the kodwai team | `feedback "<text>" --category bug\|feature\|improvement\|general [--rating 1-5]` |
 | Their feedback and the team's replies | `feedback list` |
 | Open a page in the browser | `open [challenges\|leaderboard\|league\|events\|sprint\|quests\|badges\|profile\|wrapped\|submissions\|settings\|feedback\|<challenge-slug>]` |
 | Sign in or out | `login` / `logout` |
 
-**API keys never go through the chat.** Never ask for the key, and never put one in a command. `key add` asks for it in a hidden terminal prompt. When you run it (no terminal), it opens the settings page in the browser instead, where the user pastes it. Tell them that, or to run `npx @kodwai/cli@latest key add` in their own terminal. If the user pastes a key into the chat anyway, don't use it: tell them to revoke it at console.anthropic.com and add a fresh one through the page.
+**API keys never go through the chat.** Never ask for the key, and never put one in a command. `key add` asks for it in a hidden terminal prompt. When you run it (no terminal), it opens the settings page in the browser instead, where the user pastes it. Tell them that, or to run `npx @kodwai/cli@1.10.0 key add` in their own terminal. If the user pastes a key into the chat anyway, don't use it: tell them to revoke it at console.anthropic.com and add a fresh one through the page.
 
 Writes:
 - **Feedback:** draft it, show the user the exact text, and send only after they say yes. The founder reads every message.

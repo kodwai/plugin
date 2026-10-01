@@ -13,7 +13,7 @@ A challenge can be submitted only once, so confirm before sending.
 2. **Show where things stand:**
 
    ```
-   npx -y @kodwai/cli@latest status
+   npx @kodwai/cli@1.10.0 status
    ```
 
    Tell the user the time used and the files that will be sent, in two or three lines.
@@ -23,7 +23,7 @@ A challenge can be submitted only once, so confirm before sending.
 4. **Submit:**
 
    ```
-   npx -y @kodwai/cli@latest submit --yes
+   npx @kodwai/cli@1.10.0 submit --yes
    ```
 
    It runs the tests, uploads the code, git history, test results and this session's transcript, then waits for the score. Give it up to 10 minutes. If your shell tool can't wait that long, add `--no-wait` and run `status` again in a minute. It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command.

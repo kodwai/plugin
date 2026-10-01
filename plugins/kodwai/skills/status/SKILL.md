@@ -8,7 +8,7 @@ description: Show time left and files so far for the kodwai challenge in progres
 Run this from the challenge workspace (the folder, or the `kodwai-*` folder inside it, that contains `.kodwai/submission.json`). Outside a workspace it shows the signed-in account and any challenge in progress.
 
 ```
-npx -y @kodwai/cli@latest status
+npx @kodwai/cli@1.10.0 status
 ```
 
 Report it in two or three lines: time used and left (or the score, if it's already submitted) and the file count. It needs network access to api.kodwai.com. If a sandbox blocks it, tell the user and let them approve network access for this command. Never submit or abandon from here.

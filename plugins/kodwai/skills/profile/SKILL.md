@@ -6,7 +6,7 @@ argument-hint: "[username | badges | quests | wrapped | card]"
 
 # kodwai profile and progress
 
-Run these with `npx -y @kodwai/cli@latest <command>`.
+Run these with `npx @kodwai/cli@1.10.0 <command>`.
 
 | The user wants | Command |
 |---|---|

@@ -146,17 +146,37 @@ function walk(dir) {
 }
 walk(ROOT);
 
+// Every way the plugin runs the CLI is pinned to one exact version: directories
+// reject `npx pkg@latest` and unversioned `npx pkg`. A bare package name in prose
+// or a link (npmjs.com/package/@kodwai/cli) isn't a launcher and is fine.
+const pinned = new Set();
+function checkPins(text, rel) {
+  for (const m of text.matchAll(/(npx (?:-y )?)?@kodwai\/cli(@[A-Za-z0-9.\-]+)?/g)) {
+    const launcher = Boolean(m[1]);
+    const v = m[2]?.slice(1);
+    if (v && /^\d+\.\d+\.\d+$/.test(v)) pinned.add(v);
+    else if (v || launcher) fail(`${rel}: pin the CLI to an exact version, found "${m[0]}" (npm run pin-cli)`);
+    if (m[1]?.includes("-y")) fail(`${rel}: drop -y from npx (npm run pin-cli)`);
+  }
+}
+function scan(dir) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) scan(full);
+    else if (/\.(md|json|mjs|yaml)$/.test(entry.name)) checkPins(readFileSync(full, "utf-8"), full.slice(ROOT.length + 1));
+  }
+}
+scan(PLUGIN);
+checkPins(readFileSync(join(ROOT, "README.md"), "utf-8"), "README.md");
+if (pinned.size > 1) fail(`CLI pinned to more than one version: ${[...pinned].join(", ")} (npm run pin-cli)`);
+for (const skill of skills) {
+  if (/sk-ant-[A-Za-z0-9]{8,}/.test(readFileSync(join(skillsDir, skill, "SKILL.md"), "utf-8"))) {
+    fail(`skills/${skill}: contains something that looks like a real API key`);
+  }
+}
+
 if (errors.length) {
   console.error(`✖ ${errors.length} problem(s):\n  - ${errors.join("\n  - ")}`);
   process.exit(1);
 }
-// Skills that run the CLI: non-interactive npx on @latest, and never an API key on a command line.
-for (const skill of skills) {
-  const text = readFileSync(join(skillsDir, skill, "SKILL.md"), "utf-8");
-  for (const m of text.matchAll(/npx [^`\n]*@kodwai\/cli[^`\s]*/g)) {
-    if (!/npx (-y )?@kodwai\/cli@latest/.test(m[0])) fail(`skills/${skill}: use npx -y @kodwai/cli@latest (${m[0]})`);
-  }
-  if (/sk-ant-[A-Za-z0-9]{8,}/.test(text)) fail(`skills/${skill}: contains something that looks like a real API key`);
-}
-
 console.log(`✔ kodwai plugin valid: ${skills.length} skills, 3 manifests, 3 marketplaces, 2 hook files`);
